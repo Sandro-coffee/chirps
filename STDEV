@@ -1,0 +1,17 @@
+ cdo -h # CDO options
+ cdo --operators
+ cdo showtimestamp chirps-v2.0.annual.nc
+ cdo sinfon chirps-v2.0.annual.nc
+ 
+ 
+ # CONVERT -9999 TO NA
+ cdo -setmissval,nan chirps-v2.0.annual.nc clean.chirps-v2.0.annual.nc
+ 
+ cdo -s showatts clean.chirps-v2.0.annual.nc    #CHECK
+ 
+ 
+ # STD DEVIATION
+  cdo ymonstd clean.chirps-v2.0.annual.nc stdev.chirps-v2.0.annual.nc
+  
+  # MEAN
+  cdo yseasmean clean.chirps-v2.0.annual.nc mean.chirps-v2.0.annual.nc 
